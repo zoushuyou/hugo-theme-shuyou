@@ -19,7 +19,7 @@
 <script src="{{ "js/iDisqus.js" | relURL }}"></script>
 <script>
 var disq = new iDisqus('disqus-comment', {
-    forum: '{{ .Site.Config.Services.Disqus.Shortname }}',
+    forum: '{{ .Site.DisqusShortname}}',
     api: '{{ .Site.Params.disqus_proxy }}',
 	site: '{{ .Site.Params.disqus_site }}',
     mode: 1,
@@ -28,7 +28,7 @@ var disq = new iDisqus('disqus-comment', {
     emojiPreview: true
 });
 </script>
-{{ else if .Site.Config.Services.Disqus.Shortname }}
+{{ else if .Site.DisqusShortname }}
 <!-- disqus 评论框 end -->
 <div id="disqus-comment"></div>
 {{ template "_internal/disqus.html" . }}
@@ -41,24 +41,4 @@ var disq = new iDisqus('disqus-comment', {
         el: '#twikoo-tcomment',
     })
 </script>
-{{ end }}
-
-
-{{ if .Site.Params.artalk_enable }}
-<link href="{{ $.Site.Params.artalk_server }}/dist/Artalk.css" rel="stylesheet" />
-<script src="{{ $.Site.Params.artalk_server }}/dist/Artalk.js"></script>
-
-<!-- Artalk -->
-<div id="Comments"></div>
-
-<script>
-    Artalk.init({
-        el: '#Comments',
-        pageKey: '{{ .Permalink }}',
-        pageTitle: '{{ .Title }}',
-        server: '{{ $.Site.Params.artalk_server }}',
-        site: '{{ $.Site.Params.artalk_site }}',
-    })
-</script>
-
 {{ end }}

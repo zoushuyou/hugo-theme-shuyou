@@ -13,7 +13,7 @@
         {{ if .Site.Params.algolia_search }}
             {{ partial "search-algolia.html" . }}
         {{ else }}
-            {{ partial "search-pagefind.html" . }}
+            {{ partial "search.html" . }}
         {{ end }}
        	</div>
         {{ partial "sidebar.html" . }}
