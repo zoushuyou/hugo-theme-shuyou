@@ -10,7 +10,7 @@ And it can be used for my git submodule.
 ## usage
 
 ```bash
-git submodule add https://github.com/shuyouyou/hugo-theme-shuyou.git themes/shuyou
+git submodule add https://github.com/zoushuyou/hugo-theme-shuyou.git themes/shuyou
 ```
 
 ## update
